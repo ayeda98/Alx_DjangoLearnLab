@@ -5,16 +5,16 @@ import django
 
 from relationship_app.models import Author, Book, library, Librarian
 
-def query_books_by_author(author_id):
+def query_books_by_author(name):
     # Query all books by a specific author
     try:
-        author = Author.objects.get(id=author_id)
+        author = Author.objects.get(name=author_name)
         books = Book.objects.filter(author=author)
         print(f"Books written by {author.name}:")
         for book in books:
             print(f"- {book.title}")
     except Author.DoesNotExist:
-        print(f"Author with ID {author_id} does not exist.")
+        print(f"Author with name {name} does not exist.")
 
 def list_all_books_in_library(library_id):
     # List all books in a library
@@ -26,12 +26,12 @@ def list_all_books_in_library(library_id):
         for book in books:
             print(f"- {book.title}")
     except Library.DoesNotExist:
-        print(f"library with ID {library_id} does not exist.")
+        print(f"library with name {name} does not exist.")
 
-def retrieve_librarian_for_library(library_id):
+def retrieve_librarian_for_library(name):
     # Retrieve the librarian for a library
     try:
-        library = Library.objects.get(id=library_id)
+        library = Library.objects.get(name=library_name)
         librarian = library.librarian  # Corrected to access the related librarian
         print(f"The librarian for the library {library.name} is {librarian.name}.")
     except Library.DoesNotExist:
