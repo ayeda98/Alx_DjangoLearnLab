@@ -1,9 +1,7 @@
 import os
 import django
 
-# Configure the settings for the Django project
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'your_project_name.settings')
-django.setup()
+
 
 from relationship_app.models import Author, Book, library, Librarian
 
@@ -21,7 +19,8 @@ def query_books_by_author(author_id):
 def list_all_books_in_library(library_id):
     # List all books in a library
     try:
-        library = library.objects.get(id=library_id)
+       
+        library = Library.objects.get(name=library_name)
         books = library.books.all()  # Corrected to access the related books
         print(f"Books in the library {library.name}:")
         for book in books:
