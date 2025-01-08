@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails de la bibliothèque</title>
+</head>
+<body>
+    <h1>Bibliothèque : {{ library.name }}</h1>
+    <h2>Livres dans la bibliothèque :</h2>
+    <ul>
+        {% for book in library.books.all %}
+        <li>{{ book.title }} par {{ book.author.name }} (Publié le {{ book.publication_year }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
