@@ -1,0 +1,28 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <header>
+    <h1>Mon Blog</h1>
+  </header>
+  
+  <nav>
+    <a href="{% url 'post_list' %}">Accueil</a>
+    <a href="{% url 'post_create' %}">Créer un article</a>
+  </nav>
+
+  <div class="container">
+    <h2>Liste des articles</h2>
+    <ul class="posts">
+      {% for post in posts %}
+        <li>
+          <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+          <p>{{ post.published_date|date:"d M Y" }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mon Blog</p>
+  </footer>
+{% endblock %}

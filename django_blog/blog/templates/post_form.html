@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <header>
+    <h1>{% if form.instance.pk %}Modifier{% else %}Créer{% endif %} un article</h1>
+  </header>
+  
+  <div class="container">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Sauvegarder</button>
+    </form>
+  </div>
+{% endblock %}

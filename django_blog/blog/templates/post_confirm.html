@@ -1,0 +1,20 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <header>
+    <h1>Supprimer un article</h1>
+  </header>
+  
+  <div class="container">
+    <p>Êtes-vous sûr de vouloir supprimer cet article ?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Oui, supprimer</button>
+    </form>
+    <a href="{% url 'post_list' %}">Annuler</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mon Blog</p>
+  </footer>
+{% endblock %}

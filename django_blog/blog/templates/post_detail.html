@@ -1,0 +1,23 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <header>
+    <h1>Mon Blog</h1>
+  </header>
+  
+  <div class="container">
+    <div class="post-detail">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+      <p><strong>Publié le :</strong> {{ post.published_date|date:"d M Y" }}</p>
+      <p><strong>Auteur :</strong> {{ post.author }}</p>
+      <a href="{% url 'post_update' post.pk %}">Modifier</a>
+      <a href="{% url 'post_delete' post.pk %}">Supprimer</a>
+      <a href="{% url 'post_list' %}">Retour à la liste</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mon Blog</p>
+  </footer>
+{% endblock %}
