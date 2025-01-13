@@ -53,14 +53,14 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 # Modifier un article
-class PostUpdateView(LoginRequiredMixin, UpdateView):
+class PostUpdateView(UpdateView):
     model = Post
-    form_class = PostForm
     template_name = 'blog/post_form.html'
+    fields = ['title', 'content']  # Liste des champs à modifier
 
-    def get_queryset(self):
-        return Post.objects.filter(author=self.request.user)
-
+    def form_valid(self, form):
+        form.instance.author = self.request.user  # Assigner l'utilisateur connecté comme auteur
+        return super().form_valid(form)
 # Supprimer un article
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
