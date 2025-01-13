@@ -27,3 +27,10 @@ def profile(request):
     else:
         form = ProfileForm(instance=request.user)
     return render(request, 'blog/profile.html', {'form': form})
+
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['email']  # You can extend this to include additional fields like profile picture or bio

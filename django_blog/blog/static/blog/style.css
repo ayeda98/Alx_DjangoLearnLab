@@ -1,0 +1,94 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for the form */
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Form elements */
+.form input, .form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form input:focus, .form button:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+
+.form button {
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.form button:hover {
+    background-color: #004494;
+}
+
+/* Link to redirect */
+.redirect {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.redirect a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.redirect a:hover {
+    text-decoration: underline;
+}
+
+/* Logout Button */
+.logout-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #ff4d4d;
+    padding: 12px;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.logout-btn:hover {
+    background-color: #e04343;
+}
+
